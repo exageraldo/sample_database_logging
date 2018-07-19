@@ -1,15 +1,13 @@
-import os
 from sqlalchemy import Column, Integer, String
 from sqlalchemy import create_engine, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql import func
 from sqlalchemy.orm import sessionmaker
 
-default_url = 'postgresql://user:password@host/database'
-level = os.environ.get('URL_DATABASE', default_url)
+from . import url_database
 
 Base = declarative_base()
-engine = create_engine('postgresql://postgres:123@localhost/postgres')
+engine = create_engine(url_database)
 
 Session = sessionmaker(bind=engine)
 session = Session()
