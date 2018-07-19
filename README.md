@@ -1,5 +1,7 @@
+# Criação de logs usando banco relacional e não relacional
 Teste de estresse feito com 1.000 entradas de logs.
 
+## NoSQL - MongoDB
 ```sh
 $ time python sample_nosql.py
 ```
@@ -9,6 +11,8 @@ python sample_nosql.py  3,66s user 0,25s system 74% cpu 5,265 total
 
 ![NoSQL Data](images/nosql_data.jpg "Data")
 
+
+## SQL - PostgreSQL
 ```sh
 $ time python sample_sql.py
 ```
