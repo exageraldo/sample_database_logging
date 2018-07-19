@@ -1,6 +1,7 @@
-import os
 import logging
 from log4mongo.handlers import MongoHandler
+
+from . import logging_level
 
 """
 https://docs.python.org/3.6/library/logging.html
@@ -14,11 +15,9 @@ LEVEL_DICT = {
     'NOTSET': logging.NOTSET # 0
 }
 
-level = os.environ.get('LOG_LEVEL', 'DEBUG')
-
 logger = logging.getLogger('doutorfacil')
 
-logger.setLevel(LEVEL_DICT[level])
+logger.setLevel(LEVEL_DICT[logging_level])
 
 logger.addHandler(
         MongoHandler(

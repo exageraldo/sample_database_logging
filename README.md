@@ -1,13 +1,19 @@
+Teste de estresse feito com 1.000 entradas de logs.
+
 ```sh
 $ time python sample_nosql.py
 ```
-python sample_nosql.py  3,50s user 0,31s system 80% cpu 4,753 total
+Resultado dos logs salvos em um banco não relacional: 4.586468696594238 segundos
+
+python sample_nosql.py  3,66s user 0,25s system 74% cpu 5,265 total
 
 ![NoSQL Data](images/nosql_data.jpg "Data")
 
 ```sh
 $ time python sample_sql.py
 ```
-python sample_sql.py  13,68s user 1,14s system 20% cpu 1:12,01 total
+Resultado dos logs salvos em um banco relacional: 82.4825050830841 segundos
+
+python sample_sql.py  13,05s user 1,03s system 16% cpu 1:22,97 total
 
 ![SQL Data](images/sql_data.jpg "Data")
